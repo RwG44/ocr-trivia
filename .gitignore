@@ -1,3 +1,4 @@
 /__pycache__
-/images/*
+images/*
 *.traineddata
+gg_credential.json

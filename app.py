@@ -3,8 +3,10 @@ import os
 import win32file
 import win32event
 import win32con
+import webbrowser
 
 import tess
+import query_optimization
 
 ##path_to_watch = os.path.abspath (".")
 path_to_watch = '.\\images'
@@ -50,6 +52,8 @@ try:
                 for file in added:
                     text = tess.extract_text(path_to_watch + '\\' + file)
                     print(file, ':', text)
+                    query = query_optimization(text)
+                    webbrowser.open('https://www.google.com.vn/search?q=' + text)
     
             if deleted: print("Deleted: ", ", ".join (deleted))
 
